@@ -1,0 +1,688 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Martin Jacobson</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-transparentGray { background-color: rgba(227, 226, 224, 0); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="f858ff8e-d822-4918-bb7a-c696de685b72" class="page sans"><header><div class="page-header-icon undefined"><img class="icon" src="Martin%20Jacobson%20f858ff8ed8224918bb7ac696de685b72/icons8-wikipedia-logo-280.png"/></div><h1 class="page-title">Martin Jacobson</h1><p class="page-description"></p></header><div class="page-body"><hr id="e4846f8f-bf88-4c93-8e6a-692e395722cf"/><div id="a835a779-b8e2-430a-a04d-07a65d73d228" class="column-list"><div id="11f72f7f-1a3a-4609-9150-efc7118549b5" style="width:75%" class="column"><p id="cb0944ef-47f3-4c7d-acd3-7f62f48d841d" class=""><em>&quot;There was this thinker in the 18th century who said to his peers… &quot; </em></p><p id="0b9549f2-e092-4282-87bb-dced134994d0" class="">—- Martin Jacobson </p><p id="973646a2-a09d-4f0f-91a3-28cb02f35379" class="">
+</p><p id="d9ef161a-2bd5-46c7-9bd0-1019dc6c23d4" class=""><em>“I forgot the name of him, but there was this German economist who …”</em></p><p id="7d73ba8a-827e-4287-bbf2-9f744ea7123e" class="">—- Martin Jacobson </p><p id="237f6d52-a723-4742-9c25-e06868d777c9" class="">
+</p><p id="0cd70768-bfbd-4fe1-b107-4c6cc0881b4f" class=""><mark class="highlight-default">Martin Jacobson (*14 June 1994 in Uppsala) is a freshly baked doctorate, political theorist, philosopher and left-libertarian Geoist. His work is considered the foundation of </mark><mark class="highlight-blue"><span style="border-bottom:0.05em solid">Jacobsonain left-liberalism Geoism</span></mark><mark class="highlight-default">, a theoretical school that has been highly </mark>popularized after the publication of Jacobson’s first book <em><mark class="highlight-gray">Land &amp; Liberty: On the Natural Monopoly of Violence (</mark></em>2024). Due to the similarities to the first popular movement of Geoism after <mark class="highlight-blue"><span style="border-bottom:0.05em solid">Henry George</span></mark>’s book <em><a href="https://en.wikipedia.org/wiki/Progress_and_Poverty">Progress and Poverty</a></em> (1879), Jacobsonian left-libertarian Geoism is often also referred to as second-wave Geoism.</p><p id="54141b50-2937-459e-ba4f-5a6195853506" class="">Martin Jacobson is also a private tour guide of the city of Uppsala.</p><p id="53d6efff-a7df-4d73-a786-0399584e8727" class="">
+</p><ul id="5f325b3f-128c-40a7-99a9-7b5fc7dd506b" class="toggle"><li><details open=""><summary><strong>Content</strong></summary><div id="4a20ccba-1dd9-48e5-a270-60cfd5bf911e" class="column-list"><div id="7d9e1e24-4832-4aea-8690-8af5d1159981" style="width:31.25%" class="column"><nav id="d81ba06f-ca51-4d4a-8876-464fd116990c" class="block-color-gray_background table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#cf0dae01-4757-4dca-9587-fde97c0db9bb">Biography</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#84a2a363-8e1d-40be-bee9-e3343b90ca45">Personality</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#be9ec46f-35de-4110-bacf-dd42f0afb6a3">Powers</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#2f3b6060-c579-4fbe-ba38-4603b82fd795">Weaknesses</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#e5b71bdb-4c7e-4a6c-917e-308b7d5393ad">Gallery</a></div></nav></div><div id="c411fefb-bc5b-4368-baed-e779afeb01aa" style="width:68.75%" class="column"><p id="7a8838c1-6174-46a5-8e58-963e5f0cacfc" class="">
+</p></div></div></details></li></ul><h2 id="cf0dae01-4757-4dca-9587-fde97c0db9bb" class="">Biography</h2><hr id="71a74c14-3bf2-46cf-bda0-ffd0b10dfbc2"/><p id="06eac86d-db0d-4b68-ba95-c6aae471680a" class="">Jacobson was born in <mark class="highlight-blue"><span style="border-bottom:0.05em solid">Uppsala</span></mark> in <mark class="highlight-blue"><span style="border-bottom:0.05em solid">Uppsala County</span></mark>, Sweden on 14 June 1994. His family has long roots in the city of Uppsala, with one of his relatives having lived at Gamla Torget, in the building that is nowadays home to the Department of Government of Uppsala University.</p><p id="801f732f-169e-49b0-a1ef-e2191459248d" class="">Jacobson attended Uppsala’s Katedralskolan, before studying Political Science and Philosophy at <mark class="highlight-blue"><span style="border-bottom:0.05em solid">Uppsala University</span></mark>. During his time as a student, he worked in Uppsala’s museums, fostering his deep-rooted interest in his hometown, history and power struggles.</p><p id="8f223141-e72c-42e9-bfaa-4836605cbf4d" class="">During his student years, Jacobson formulated three impactful theses: </p><ul id="70117b3f-9269-4d10-a06e-60af38d0ceea" class="bulleted-list"><li style="list-style-type:disc">Bachelor thesis: <em><mark class="highlight-gray">Self-ownership and the Foundations of Libertarianism: Applying Kymlicka’s Arguments on Geolibertarianism</mark></em></li></ul><ul id="75b9410c-5398-4ba8-82bc-df4a8cd26dd6" class="bulleted-list"><li style="list-style-type:disc">Magister thesis: <em><mark class="highlight-gray">Power, Paternalism and Libertarianism: Libertarian Paternalism – More than a Nudge</mark></em></li></ul><ul id="1bc347e2-c511-46fe-b300-275ea8e52c8a" class="bulleted-list"><li style="list-style-type:disc">Master thesis: <em><mark class="highlight-gray">Anarchy, State and the Political Conception of Justice</mark></em></li></ul><p id="2d78a22c-b641-4fcb-b9b3-6fe42d7c0ce1" class="">From August 2019 on, he began working on his dissertation as a doctoral candidate of <mark class="highlight-blue"><span style="border-bottom:0.05em solid">Jonas Hultin Rosenberg</span></mark> and <mark class="highlight-blue"><span style="border-bottom:0.05em solid">Johan Tralau</span></mark>. Unfortunately, his time as a doctoral student fell into the global <mark class="highlight-blue"><span style="border-bottom:0.05em solid">Covid-19 pandemic </span></mark><mark class="highlight-default">which was particularly tragic for Jacobson who is known for his commitment to his peers and his social nature. </mark></p><p id="3fd1e300-2d28-4855-aeab-ceb4e209b45e" class="">Jacobson defended his dissertation on 7 June 2024, with a deep and elaborate discussion led by the famous contemporary political theorist  <mark class="highlight-blue"><span style="border-bottom:0.05em solid">Robert Huseby,</span></mark><mark class="highlight-default"> professor at the University of Oslo. </mark></p><p id="352d6c4d-a5ca-4285-bce4-318df61d78dd" class="">The following traditional defense party at Uppland’s nation became known as one of the city&#x27;s most intense and glorious festivities since the famous parties by <mark class="highlight-blue"><span style="border-bottom:0.05em solid">Michel Foucault</span></mark> during his time in Uppsala in the 1950s.</p><p id="b898bfe9-4fa7-4d38-99e6-61f4fc1c1366" class="">
+</p><h2 id="84a2a363-8e1d-40be-bee9-e3343b90ca45" class="">Personality</h2><hr id="cb610fdc-582b-4516-880b-63ad40e26e26"/><p id="97d2fc83-0727-42df-91ef-5fdeaa8709c6" class="">Martin Jacobson became known for his ability to show up for others and his loyalty to his friends and peers. Being an organizer of the regular “<mark class="highlight-blue"><span style="border-bottom:0.05em solid">No Doodle - No Bullshit</span></mark>” (NDNB) after-work, he plays a crucial role in unifying the PhD community and in the peer-therapy sessions doctoral candidates commonly engage in. </p><p id="e2b087c7-9429-4443-b6cb-6e9c0fb3818e" class="">Jacobson has further been described by his cohort friend <mark class="highlight-blue"><span style="border-bottom:0.05em solid">Luise Bendfeldt</span></mark> as “always supportive and an integral part of his doctoral cohort bringing interesting perspectives and encouragement about everyone’s ideas”. </p><p id="2cda668c-0ae2-4a6b-b782-11a2082f792e" class="">He is further esteemed and appreciated for living his political ideas and values even in his private life, as he has been committed to not harming animals and a vegan lifestyle for several years. </p><p id="12c5918f-f8f2-4172-8d37-bae7e5c3ea3d" class="">
+</p><h3 id="be9ec46f-35de-4110-bacf-dd42f0afb6a3" class="">Powers</h3><ul id="90526c5f-831b-4a2d-955b-5a5d77adeb76" class="bulleted-list"><li style="list-style-type:disc">extremely smart </li></ul><ul id="170750fe-c908-4141-87f3-f368c0bd2bd5" class="bulleted-list"><li style="list-style-type:disc">extremely kind </li></ul><ul id="976dee5d-7cdd-4af7-98db-6d3a3ac739bd" class="bulleted-list"><li style="list-style-type:disc">extremely sweet</li></ul><ul id="8950aceb-9a6b-4b77-bec1-f74ab61e58b9" class="bulleted-list"><li style="list-style-type:disc">cannot do harm (no mean word has ever been heard from his mouth) </li></ul><ul id="09801a9a-b72b-468c-9839-21b8b17885e4" class="bulleted-list"><li style="list-style-type:disc">loyalty </li></ul><ul id="e937f39c-9f64-416d-93c9-d76f4f4f4ddc" class="bulleted-list"><li style="list-style-type:disc">depth of his thought </li></ul><ul id="66cfa508-c454-4570-8e77-6b4d2696eaff" class="bulleted-list"><li style="list-style-type:disc">engaged</li></ul><ul id="1059acdb-6706-44d9-a178-b56035055045" class="bulleted-list"><li style="list-style-type:disc">musically talented </li></ul><h3 id="2f3b6060-c579-4fbe-ba38-4603b82fd795" class="">Weaknesses</h3><ul id="7f4b7907-06c5-4db3-9365-54d097241791" class="bulleted-list"><li style="list-style-type:disc">really hard to plan a “<mark class="highlight-blue"><span style="border-bottom:0.05em solid">Spex</span></mark>” for, since Jacobson does not offer any ground to make fun of him whatsoever [Studentspex or simply Spex is a form of amateur theatre in Sweden and Finland with a strong student connection, often shown at defense parties to mock the fresh doctor.]</li></ul><h2 id="e5b71bdb-4c7e-4a6c-917e-308b7d5393ad" class="">Gallery</h2><hr id="b9fff0fc-576c-4d36-9a0e-9b8843341c3a"/><figure id="648ae42e-7bc1-4982-b8bc-a8c90f834de9" class="image"><a href="Martin%20Jacobson%20f858ff8ed8224918bb7ac696de685b72/m8.jpg"><img style="width:864px" src="Martin%20Jacobson%20f858ff8ed8224918bb7ac696de685b72/m8.jpg"/></a><figcaption>Martin Jacobson giving a city tour of Uppsala, Uppsala domkyrka, Sep. 2023.</figcaption></figure><figure id="6bc21ab0-87c8-494e-9b54-989ebfa00360" class="image"><a href="Martin%20Jacobson%20f858ff8ed8224918bb7ac696de685b72/m7.jpg"><img style="width:720px" src="Martin%20Jacobson%20f858ff8ed8224918bb7ac696de685b72/m7.jpg"/></a><figcaption>The 2019 PhD cohort at the beginning of their doctoral program, PhD joint office, “the tower”, 2019.</figcaption></figure><figure id="f150001d-bd16-4646-96ad-e62430edad19" class="image"><a href="Martin%20Jacobson%20f858ff8ed8224918bb7ac696de685b72/m5.jpg"><img style="width:912px" src="Martin%20Jacobson%20f858ff8ed8224918bb7ac696de685b72/m5.jpg"/></a><figcaption>Martin Jacobson presenting his dissertation at the PhD retreat at Wiks Slott, May 2024.</figcaption></figure><figure id="ca6fc705-55cc-44ae-b7d5-54cf9b745aa1" class="image"><a href="Martin%20Jacobson%20f858ff8ed8224918bb7ac696de685b72/m3.jpg"><img style="width:768px" src="Martin%20Jacobson%20f858ff8ed8224918bb7ac696de685b72/m3.jpg"/></a><figcaption>Summer party by Uppsala’s political science association, Skytteanska Trädgården, Uppsala, Jun. 2022.</figcaption></figure><figure id="a1cd8232-dbd8-4899-b1c2-ea3b209e717e" class="image"><a href="Martin%20Jacobson%20f858ff8ed8224918bb7ac696de685b72/WhatsApp_Image_2024-05-31_at_23.43.16.jpeg"><img style="width:721.5px" src="Martin%20Jacobson%20f858ff8ed8224918bb7ac696de685b72/WhatsApp_Image_2024-05-31_at_23.43.16.jpeg"/></a><figcaption>Summer party by the PhD Association, Skytteanska Trädgården, Uppsala, Jun. 2023.</figcaption></figure><figure id="f28c6330-8744-49c2-85fd-929e4cfcf4d5" class="image"><a href="Martin%20Jacobson%20f858ff8ed8224918bb7ac696de685b72/WhatsApp_Image_2024-05-31_at_23.41.05.jpeg"><img style="width:721.5px" src="Martin%20Jacobson%20f858ff8ed8224918bb7ac696de685b72/WhatsApp_Image_2024-05-31_at_23.41.05.jpeg"/></a><figcaption>“No Doodle - No Bullshit” (NDNB) after work organized by PhD candidates at Uppsala University,  Sep. 2023.</figcaption></figure></div><div id="77eb6c41-d38b-43f9-bafb-e65d0295f775" style="width:25%" class="column"><figure id="52badfc2-1493-4803-95a3-66ca946ab8d3" class="image"><a href="Martin%20Jacobson%20f858ff8ed8224918bb7ac696de685b72/martin.jpg"><img style="width:240.5px" src="Martin%20Jacobson%20f858ff8ed8224918bb7ac696de685b72/martin.jpg"/></a></figure><div id="a3f32182-0dea-40c4-bc26-fb6b91fb30da" class="column-list"><div id="99911606-31e0-433a-ad9d-c68b1ebfdead" style="width:31.25%" class="column"><p id="73bc918c-de81-4931-a7ef-01f02970ae2d" class=""><strong>Name</strong></p><p id="1a6c47d9-04c4-4427-879d-dcce96c29293" class=""><strong>Status</strong></p><p id="eba69815-4a05-4180-bc66-f3e500bda1b2" class="">
+</p></div><div id="18ad6b27-5855-4dc2-98e4-013d5ce9840e" style="width:68.75%" class="column"><p id="eb29268d-30ea-4d41-b473-7f2545c54b32" class="">Martin Jacobson</p><p id="741ba611-05d5-4c57-a07f-0bee7a93bc20" class="">Alive</p><p id="6dc0a651-a2fd-4028-bf65-6f42cf26e07e" class="">
+</p></div></div><div id="836b2ede-21d8-4f15-929f-3049039cc39e" class="column-list"><div id="52b6205f-93bd-4ce6-bdac-dff97de493b9" style="width:37.5%" class="column"><p id="b317d15d-0498-454d-9828-87e37ce30214" class=""><strong>Age</strong></p><p id="4630ad1b-c4ff-42c8-97bf-46ede601c31c" class=""><strong>Height</strong></p><p id="3461e35b-360f-4bdf-8c77-714f12e2cc19" class=""><strong>Eyes</strong></p><p id="c76d2f46-b603-4a97-9ff3-f692d850b2bd" class=""><strong>Hair</strong></p><p id="c897e433-e3e6-4a6a-8225-24a4d68f597a" class=""><strong>Unusual Features</strong></p></div><div id="7ae513a3-8f57-40db-8580-47583706202d" style="width:62.5%" class="column"><p id="9af9cbe5-238a-4863-a4f0-8700c1cd5d30" class="">29</p><p id="3c39c2f9-00ae-4c5f-b056-713291f78045" class="">1,79m</p><p id="d227f034-a95c-4258-bd1e-3c32c288fd12" class="">Blue</p><p id="1a212386-5c65-419e-bc23-547c1539c52e" class="">Long and fluffy</p><p id="238ee478-af2c-4606-8cab-a22359fdb728" class="">Extremely smart and kind</p></div></div><div id="71317366-d89e-4c5e-a8b1-930adc3de7f6" class="column-list"><div id="9eb5479d-62a6-4eda-a002-33f6bbb3f972" style="width:43.75%" class="column"><p id="8ea018ef-edbe-4ce0-b210-3a813ec02d56" class=""><strong>Affiliations</strong></p><p id="1b321f40-854a-4091-8be6-128c09411b5f" class="">
+</p></div><div id="07dd72ed-a37e-4ea8-8d04-704d2cd7f68c" style="width:56.25%" class="column"><p id="9ee63c59-2a72-4054-bf64-795766cff3a0" class="">Uppsala University</p></div></div><p id="5198ae4b-4a56-4b14-88a0-f18ccd0d103f" class="">
+</p></div></div><p id="6eab25a6-dec9-4ec1-b503-542bd2bdd7a4" class="">
+</p><hr id="85425318-5633-4983-9f44-feaf4c8e86e9"/></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
